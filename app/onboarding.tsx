@@ -5,7 +5,7 @@ import { useRouter } from 'expo-router';
 
 export default function OnboardingScreen() {
   const router = useRouter();
-  const toggleHadOnboarded = useUserStore((state) => state.toggleHadOnboarded);
+  const toggleHadOnboarded = useUserStore((state) => state.toggleHasOnboarded);
 
   const handlePress = () => {
     toggleHadOnboarded();
