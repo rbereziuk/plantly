@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { theme } from '@/theme';
 import { useUserStore } from '@/store/userStore';
 import { Button } from '@/components/Button';
-import { OnboardingImage } from '@/components/OnboardingImage';
+import { PlantImage } from '@/components/PlantImage';
 
 export default function OnboardingScreen() {
   const router = useRouter();
@@ -30,7 +30,7 @@ export default function OnboardingScreen() {
           Keep your plants healthy and hydrated
         </Text>
       </View>
-      <OnboardingImage />
+      <PlantImage />
       <Button title="Let me in!" onPress={handlePress} />
     </LinearGradient>
   );
