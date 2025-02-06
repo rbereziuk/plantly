@@ -10,10 +10,14 @@ import { theme } from '@/theme';
 import { Button } from '@/components/Button';
 import { useState } from 'react';
 import { PlantImage } from '@/components/PlantImage';
+import { usePlantsStore } from '@/store/plantsStore';
+import { useRouter } from 'expo-router';
 
 export default function NewScreen() {
   const [name, setName] = useState<string>();
   const [days, setDays] = useState<string>();
+  const addPlant = usePlantsStore((state) => state.addPlant);
+  const router = useRouter();
 
   const handleSubmit = () => {
     if (!name) {
@@ -34,7 +38,8 @@ export default function NewScreen() {
       );
     }
 
-    console.log('Adding plant', name, days);
+    addPlant(name, Number(days));
+    router.navigate('/');
   };
 
   return (
